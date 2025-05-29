@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="description"
+        content="LogAction: Consistent Cross-system Anomaly Detection through Logs via Active Domain Adaptation">
+  <meta name="keywords" content="Anomaly detection, Log analysis, Active learning, Domain Adaptation">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>LogAction: Consistent Cross-system Anomaly Detection through Logs via Active Domain Adaptation</title>
+
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+        rel="stylesheet">
+
+  <link rel="stylesheet" href="./static/css/bulma.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+  <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="./static/css/index.css">
+  <link rel="icon" href="./static/images/favicon.svg">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="./static/js/fontawesome.all.min.js"></script>
+  <script src="./static/js/bulma-carousel.min.js"></script>
+  <script src="./static/js/bulma-slider.min.js"></script>
+  <script src="./static/js/index.js"></script>
+</head>
+<body>
+
+<section class="hero">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column has-text-centered">
+          <h1 class="title is-1 publication-title" style="font-size: 2.5rem;">LogAction: Consistent Cross-system Anomaly Detection through Logs via Active Domain Adaptation</h1>
+          <div class="is-size-5 publication-authors">
+            <div class="is-size-4 publication-authors">
+            <span class="author-block">
+              Anonymous Submission
+            </span>
+          </div>
+          </div>
+          <div class="column has-text-centered">
+            <div class="publication-links">
+              <!-- Video Link. -->
+              <span class="link-block">
+                <a href="https://anonymous.4open.science/r/LogAction-B821"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fab fa-github"></i>
+                  </span>
+                  <span>Code</span>
+                </a>
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="hero teaser">
+  <div class="container is-max-desktop">
+    <div class="hero-body">
+      <h2 class="subtitle has-text-centered">
+        <span class="dnerf">LogAction</span> is a novel log-based anomaly detection model based on active domain adaptation that integrates active domain adaptation techniques to mitigate cold-start problems and data distribution gaps, achieving high-performance cross-system anomaly detection with minimal human labeling efforts.
+      </h2>
+      <img src="static/image/overview.png" alt="BUFFET teaser.">
+    </div>
+  </div>
+</section>
+<section class="section">
+  <div class="container is-max-desktop">
+    <!-- Abstract. -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Summary</h2>
+        <div class="content has-text-justified">
+          <p>
+            <b>Issues: <b><span style="color: red">Code start problems</span></b> and <b><span style="color: red">High labeling efforts</span></b> in log-based anomaly detection</b><br>
+              On one hand, during the initial deployment phase of software systems, it is impossible to accumulate sufficient logs to train an effective anomaly detection model. On the other hand, the massive and complex log data is difficult to accurately label, requiring substantial labeling costs.
+         </p>
+         <p>
+            <b>Key technologies: Incorporate <b><span style="color: red">Active learning</span></b> and <b><span style="color: red">Transfer learning</span></b></b><br>
+             Transfer learning is employed to address the cold-start problem, LogAction training models on mature systems and transferring them to new systems with insufficient data accumulation.
+             Meanwhile, active learning is utilized to reduce the amount of labels required during model transfer process, thereby lowering manual labeling costs.
+         </p>
+         <p>
+            <b>Our propose method: <b><span style="color: red">LogAction</span></b></b><br>
+             As a result, we pose an idea that transfer learning and active learning should be combined together to solve the label lacking problem. We define this scenario as <b>consistent cross-system anomaly detection (CCAD)</b>, that is, leveraging the features extracted from abundant historical labeled logs of mature systems (source systems) to build anomaly detection models for new systems (target systems) and consistently optimize the models with online human labels on the target systems. In this paper, we focus on the CCAD scenario and aim to build a high performance anomaly detection model without or with very few anomalous labels. We propose <b>LogAction</b>, a consistent cross-system anomaly detection model via active domain adaptation.
+         </p>
+        </div>
+      </div>
+    </div>
+  </div>
+    <!--/ Abstract. -->
+</section>
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <!-- Animation. -->
+    <div class="columns is-centered">
+      <div class="column is-full-width">
+      <h2 class="title is-3">Key Contributions</h2>
+         <div class="content has-text-justified">
+          <ul>
+            <li>
+                We propose LogAction, a novel generalizable anomaly detection approach via active domain adaptation.
+            </li>
+            <li>
+                We utilize contrastive learning techniques to mitigate the data distribution gap, while employing active learning to reduce human labeling efforts, effectively addressing the two primary challenges in CCAD task.
+            </li>
+            <li>
+                Evaluation results on three open datasets show the significant effectiveness of our approach.
+            </li>
+         </ul>
+         </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <!-- Animation. -->
+    <div class="columns is-centered">
+      <div class="column is-full-width">
+      <h2 class="title is-3">Insight</h2>
+         <div class="content has-text-justified">
+             Two log sequences from different systems (BGL and ThunderBird) exhibit distinct formats but convey the same error: "file or directory does not exist." In other words, they share the same semantics that can be transferred from one system to another.
+         </div>
+          <div align="center">
+            <img src= "/static/image/bgl_thu.png" alt="Hierarchical UCB" style="width: 60%;">
+          </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <!-- Animation. -->
+    <div class="columns is-centered">
+      <div class="column is-full-width">
+      <h2 class="title is-3">Main Ideas</h2>
+          <div class="content has-text-justified">
+            LogAction includes three main phases: Log Parser, Encoding and Active Domain Adaptation.
+            <ul>
+               <li><b>Log Parser:</b>
+                   In the Log Parser phase, we employ the log parsing method Drain to obtain templates of log events. Subsequently, we utilize the pre-trained BART model to extract the semantic information from these log event templates, transforming them into word vectors.
+               </li>
+               <li><b>Encoding:</b>
+                   After log parsing, diverse formats of raw logs are parsed into log sequences within the same feature space, yet they still exhibit different distributions. We utilize <b>contrastive learning</b> to map the log sequences from the source and target systems into log vectors, aligning their distributions to further <b>mitigate the data distribution gaps</b>.
+               </li>
+               <li><b>Active Domain Adaptation:</b>
+                   After encoding, we train a base anomaly detection model (Classifier(Source)) using source system log vectors. To optimize Classifier(Source) with target system data while reducing labeling efforts, we apply <b>active learning</b> to select <b>high-information</b> log vector subsets. Valuable vectors are those unseen by the model, differing from both source-labeled and previously active-learned vectors. We use <b>free energy-based</b> and <b>uncertainty-based</b> sampling strategies to achieve this.
+               </li>
+            </ul>
+              <div align="center">
+            <img src= "/static/image/Encoder.jpg" alt="Hierarchical UCB">
+
+              </div>
+          </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered">
+      <div class="column is-full-width">
+        <h2 class="title is-3">Experiment Results</h2>
+        <div class="columns is-vcentered interpolation-panel">
+        </div>
+        <br/>
+        <div class="content has-text-justified">
+            <h3 class="title is-4">Main Results</h3>
+                <p>
+                    <span style="color: red"><b>LogAction</b></span> outperforms state-of-the-art methods and show effective performance in CCAD task.
+                </p>
+                <img src="static/image/overall.png" alt="overall">
+        </div>
+        <div class="content has-text-justified">
+            <h3 class="title is-4">Ablations</h3>
+                <p>
+                    All components play important roles to improve performance of <span style="color: red"><b>LogAction</b></span>.
+                </p>
+                <img src="static/image/ablations.png" alt="ablations">
+        </div>
+        <div class="content has-text-justified">
+            <h3 class="title is-4">Parameter Sensitivity Analysis</h3>
+                <p>
+                    <span style="color: red"><b>LogAction</b></span> demonstrates relatively stable performance when the param fluctuates.
+                </p>
+            <img src="static/image/rate.png" alt="results">
+        </div>
+        <div class="content has-text-justified">
+            <h3 class="title is-4">Visualization</h3>
+                <p>
+                    We use t-SNE to visualize data distributions of logs before and after encoding. As shown in figure, blue/red represent normal/anomalous logs, and triangles/circles denote source/target systems. Before encoding, source and target logs (normal/anomalous) form separate clusters, showing distinct distributions. After encoding, clusters of both systems' normal and anomalous logs converge, indicating reduced distribution gaps and improved alignment.
+                </p>
+            <img src="static/image/vis.jpg" alt="results">
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+<footer class="footer">
+  <div class="container">
+    <div class="content has-text-centered">
+      <a class="icon-link"
+         href="">
+        <i class="fas fa-file-pdf"></i>
+      </a>
+      <a class="icon-link" href="https://anonymous.4open.science/r/LogAction-B821/" class="external-link" disabled>
+        <i class="fab fa-github"></i>
+      </a>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
