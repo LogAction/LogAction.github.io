@@ -37,16 +37,19 @@
                         Cross-system Anomaly Detection through Logs via Active Domain Adaptation</h1>
                     <div class="is-size-5 publication-authors">
                         <div class="is-size-4 publication-authors">
-            <span class="author-block">
-              Anonymous Submission
+            <span style="font-size: 20px;">
+                <a href="https://chiming-duan.github.io" target="_blank">Chiming Duan</a><sup>1</sup>, Minghua He<sup>1</sup>, Pei Xiao<sup>1</sup>, Tong Jia<sup>1</sup>, Xin Zhang<sup>2</sup>, Zhewei Zhong<sup>2</sup>, Xiang Luo<sup>2</sup>, Yan Niu<sup>2</sup>, Lingzhe Zhang<sup>1</sup>, Yifan Wu<sup>1</sup>, Siyu Yu<sup>1</sup>, Weijie Hong<sup>1</sup>, Ying Li<sup>1</sup> and Gang Huang<sup>1</sup>
             </span>
+            <div style="font-size: 20px;">
+                <sup>1</sup>Peking University, <sup>2</sup>Bytedance
+            </div>
                         </div>
                     </div>
                     <div class="column has-text-centered">
                         <div class="publication-links">
                             <!-- Video Link. -->
                             <span class="link-block">
-                <a href="https://anonymous.4open.science/r/LogAction-B821"
+                <a href="https://github.com/Dcm-dcm-dcm/LogAction"
                    class="external-link button is-normal is-rounded is-dark">
                   <span class="icon">
                       <i class="fab fa-github"></i>
@@ -60,602 +63,601 @@
             </div>
         </div>
     </div>
-    <hr class="my-6"/>
 </section>
 
-<section class="section">
-    <div class="container is-max-desktop">
-        <div class="columns is-centered">
-            <div class="column is-full-width">
-                <h2 class="title is-3">Revision</h2>
-                We thank all reviewers for your professional and helpful comments, and our changes and responses to each
-                question are as follows.
-                <p>In the "Major Revision (Differences Highlighted)" document, we use <span style="color: blue;">blue text</span>
-                    to indicate additions (e.g., <span style="color: blue;">add words</span>), <span
-                            style="color: purple;">purple</span> for deletions (e.g., <span
-                            style="color: purple; text-decoration: line-through;">delete words</span><span
-                            style="color: purple;">delete</span>), and <span style="color: red;">red</span> for text
-                    replacements (e.g., <span style="color: red;">new words</span><span
-                            style="color: red; text-decoration: line-through;">original words</span><span
-                            style="color: red;">replace</span>). This convention is also applied to modifications within
-                    tables. For revised figures, changes are documented in the corresponding caption (e.g., <span
-                            style="color: red;">new img</span><span style="color: red; text-decoration: line-through;">original words</span><span
-                            style="color: red;">replace img</span>).
-                </p>
-                <div class="columns is-vcentered interpolation-panel">
-                </div>
-                <br/>
-                <div class="content has-text-justified">
-                    <h3 class="title is-4">Metareview</h3>
-                    <p>
-                        <b id="metareview-q1">A. Q1: A concrete measurement of the reduction in labeling effort for a
-                            small percentage of log instances (e.g. 2%).</b>
-                    </p>
-                    <p>
-                        We have revised the content related to Experiment RQ2 (<b>Section IV, Paragraphs B, D2, and
-                        Figure 5</b>) to investigate the performance variation of LogAction as the labeling effort
-                        increases from 0% to 5%, with increments of 0.5%.
-                        This analysis aims to assess whether LogAction can maintain its effectiveness under a small
-                        percentage of labeled log instances.
-                        Our findings indicate that LogAction achieves an F1 score exceeding 89.96% with a minimal
-                        labeling effort of only 0.5%.
-                    </p>
-                    <!-- 新增一个父容器并设置 flex -->
-                    <div style="display: flex;">
-                        <div style="width: 50%; box-sizing: border-box; text-align: center;">
-                            <img src="static/image/revision/metareview_q1-1-1.png" alt="Section IV, Paragraphs B">
-                            <h4 class="subtitle is-6">Section IV, Paragraphs B</h4>
-                        </div>
-                        <div style="width: 50%; box-sizing: border-box; text-align: center;">
-                            <img src="static/image/revision/metareview_q1-1-2.png" alt="Section IV, D2">
-                            <h4 class="subtitle is-6">Section IV, D2</h4>
-                        </div>
-                    </div>
-                    <div style="text-align: center;">
-                        <img src="static/image/revision/metareview_q1-1-3.png" alt="Figure 5">
-                        <h4 class="subtitle is-6">Figure 5</h4>
-                    </div>
-                    <p>
-                        Furthermore, on most datasets, LogAction attains optimal performance when labeling percentage
-                        reaches 2%.
-                        We emphasize is that the 2% labeling cost was set for fairness. The objective of LogAction is to
-                        balance labeling cost and performance, allowing the proportion of labels to be adjusted
-                        according to practical needs.
-                        This point is further discussed in the Threats to Validity section (<b>Section IV, Paragraph
-                        E</b>).
-                        Please refer to the revisions in Section IV, Paragraphs B, D2, E, and Figure 5.
-                    </p>
-                    <div style="text-align: center;">
-                        <img src="static/image/revision/metareview_q1-2.png" alt="overall"
-                             style="width: 50%; height: auto;">
-                        <h4 class="subtitle is-6">Section IV, Paragraph E</h4>
-                    </div>
-                    <p>
-                        <b>B. Q2: The missing details</b>
-                    </p>
-                    <p>
-                        We have addressed the previously missing details in our revisions, including the
-                        hyperparameters, a discussion of the fixed-size log window, and the rationale underlying the
-                        two-step active learning process.
-                    </p>
-                    <p style=" margin-left: 2em;" id="metareview-q2-1">
-                        1) the settings of the hyperparameters: We have added a list of hyperparameters along with their
-                        descriptions in the Experimental section (<b>Section IV, Paragraphs A and Table II</b>).
-                    </p>
-                    <div style="display: flex;">
-                        <div style="width: 50%; box-sizing: border-box; text-align: center;">
-                            <img src="static/image/revision/metareview_q2-1-1.png" alt="Section IV, Paragraphs A">
-                            <h4 class="subtitle is-6">Section IV, Paragraphs A</h4>
-                        </div>
-                        <div style="width: 50%; box-sizing: border-box; text-align: center;">
-                            <img src="static/image/revision/metareview_q2-1-2.png" alt="Section IV, D2">
-                            <h4 class="subtitle is-6">Table II</h4>
-                        </div>
-                    </div>
-                    <p style=" margin-left: 2em;">
-                        Additionally, we provide a detailed explanation of the rationale behind our hyperparameter
-                        choices and analysis in the Threats to Validity section of the Experimental part (<b>Section IV,
-                        Paragraph E</b>).
-                    </p>
-                    <div style="text-align: center;">
-                        <img src="static/image/revision/metareview_q2-1-3.png" alt="overall"
-                             style="width: 50%; height: auto;">
-                        <h4 class="subtitle is-6">Section IV, Paragraph E</h4>
-                    </div>
-                    <p style=" margin-left: 2em;" id="metareview-q2-2">
-                        2) a discussion of the fixed-size log window: Since other baselines employ a fixed-size log
-                        window approach when processing the BGL, Thunderbird, and Zookeeper datasets, LogAction also
-                        adopts a fixed-size log window to ensure fairness.
-                        This is discussed in the Threats to Validity section of the Experimental part (<b>Section IV,
-                        Paragraph E</b>).
-                    </p>
-                    <div style="text-align: center;">
-                        <img src="static/image/revision/metareview_q2-2-1.png" alt="overall"
-                             style="width: 50%; height: auto;">
-                        <h4 class="subtitle is-6">Section IV, Paragraph E</h4>
-                    </div>
-                    <p style=" margin-left: 2em;">
-                        Additionally, the experimental results of LogAction on the HDFS dataset (<b>Section IV, Table
-                        III</b>), which utilizes a variable-size log window to generate log sequences, also demonstrate
-                        effective performance.
-                    </p>
-                    <div style="text-align: center;">
-                        <img src="static/image/revision/metareview_q2-2-2.png" alt="overall"
-                             style="width: 75%; height: auto;">
-                        <h4 class="subtitle is-6">Table III</h4>
-                    </div>
-                    <p style=" margin-left: 2em;" id="metareview-q2-3">
-                        3) the rationale behind the two-step active learning process:
-                        We provide a further explanation of the rationale behind the two-step active learning process in
-                        the Approach section (<b>Section III, Paragraph C</b>).
-                    </p>
-                    <div style="text-align: center;">
-                        <img src="static/image/revision/metareview_q3-1.png" alt="overall"
-                             style="width: 75%; height: auto;">
-                        <h4 class="subtitle is-6">Section III, Paragraph C</h4>
-                    </div>
-                    <p style=" margin-left: 2em;">
-                        Additionally, we include ablation experiments on the two active learning sampling methods in the
-                        experimental section (<b>Section IV, Paragraph D3 and Table IV</b>). The results demonstrate
-                        that both sampling methods contribute to the improved performance of LogAction.
-                    </p>
-                    <div style="display: flex;">
-                        <div style="width: 50%; box-sizing: border-box; text-align: center;">
-                            <img src="static/image/revision/metareview_q3-2.png" alt="Section IV, Paragraph D3">
-                            <h4 class="subtitle is-6">Section IV, Paragraph D3</h4>
-                        </div>
-                        <div style="width: 50%; box-sizing: border-box; text-align: center;">
-                            <img src="static/image/revision/metareview_q3-3.png" alt="Table IV">
-                            <h4 class="subtitle is-6">Table IV</h4>
-                        </div>
-                    </div>
-                    <p>
-                        <b>C. Q3: Other issues</b>
-                    </p>
-                    <p>
-                        Revisions addressing other review’s questions will be explained in the following three sections.
-                    </p>
-                </div>
+<!--<section class="section">-->
+<!--    <div class="container is-max-desktop">-->
+<!--        <div class="columns is-centered">-->
+<!--            <div class="column is-full-width">-->
+<!--                <h2 class="title is-3">Revision</h2>-->
+<!--                We thank all reviewers for your professional and helpful comments, and our changes and responses to each-->
+<!--                question are as follows.-->
+<!--                <p>In the "Major Revision (Differences Highlighted)" document, we use <span style="color: blue;">blue text</span>-->
+<!--                    to indicate additions (e.g., <span style="color: blue;">add words</span>), <span-->
+<!--                            style="color: purple;">purple</span> for deletions (e.g., <span-->
+<!--                            style="color: purple; text-decoration: line-through;">delete words</span><span-->
+<!--                            style="color: purple;">delete</span>), and <span style="color: red;">red</span> for text-->
+<!--                    replacements (e.g., <span style="color: red;">new words</span><span-->
+<!--                            style="color: red; text-decoration: line-through;">original words</span><span-->
+<!--                            style="color: red;">replace</span>). This convention is also applied to modifications within-->
+<!--                    tables. For revised figures, changes are documented in the corresponding caption (e.g., <span-->
+<!--                            style="color: red;">new img</span><span style="color: red; text-decoration: line-through;">original words</span><span-->
+<!--                            style="color: red;">replace img</span>).-->
+<!--                </p>-->
+<!--                <div class="columns is-vcentered interpolation-panel">-->
+<!--                </div>-->
+<!--                <br/>-->
+<!--                <div class="content has-text-justified">-->
+<!--                    <h3 class="title is-4">Metareview</h3>-->
+<!--                    <p>-->
+<!--                        <b id="metareview-q1">A. Q1: A concrete measurement of the reduction in labeling effort for a-->
+<!--                            small percentage of log instances (e.g. 2%).</b>-->
+<!--                    </p>-->
+<!--                    <p>-->
+<!--                        We have revised the content related to Experiment RQ2 (<b>Section IV, Paragraphs B, D2, and-->
+<!--                        Figure 5</b>) to investigate the performance variation of LogAction as the labeling effort-->
+<!--                        increases from 0% to 5%, with increments of 0.5%.-->
+<!--                        This analysis aims to assess whether LogAction can maintain its effectiveness under a small-->
+<!--                        percentage of labeled log instances.-->
+<!--                        Our findings indicate that LogAction achieves an F1 score exceeding 89.96% with a minimal-->
+<!--                        labeling effort of only 0.5%.-->
+<!--                    </p>-->
+<!--                    &lt;!&ndash; 新增一个父容器并设置 flex &ndash;&gt;-->
+<!--                    <div style="display: flex;">-->
+<!--                        <div style="width: 50%; box-sizing: border-box; text-align: center;">-->
+<!--                            <img src="static/image/revision/metareview_q1-1-1.png" alt="Section IV, Paragraphs B">-->
+<!--                            <h4 class="subtitle is-6">Section IV, Paragraphs B</h4>-->
+<!--                        </div>-->
+<!--                        <div style="width: 50%; box-sizing: border-box; text-align: center;">-->
+<!--                            <img src="static/image/revision/metareview_q1-1-2.png" alt="Section IV, D2">-->
+<!--                            <h4 class="subtitle is-6">Section IV, D2</h4>-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                    <div style="text-align: center;">-->
+<!--                        <img src="static/image/revision/metareview_q1-1-3.png" alt="Figure 5">-->
+<!--                        <h4 class="subtitle is-6">Figure 5</h4>-->
+<!--                    </div>-->
+<!--                    <p>-->
+<!--                        Furthermore, on most datasets, LogAction attains optimal performance when labeling percentage-->
+<!--                        reaches 2%.-->
+<!--                        We emphasize is that the 2% labeling cost was set for fairness. The objective of LogAction is to-->
+<!--                        balance labeling cost and performance, allowing the proportion of labels to be adjusted-->
+<!--                        according to practical needs.-->
+<!--                        This point is further discussed in the Threats to Validity section (<b>Section IV, Paragraph-->
+<!--                        E</b>).-->
+<!--                        Please refer to the revisions in Section IV, Paragraphs B, D2, E, and Figure 5.-->
+<!--                    </p>-->
+<!--                    <div style="text-align: center;">-->
+<!--                        <img src="static/image/revision/metareview_q1-2.png" alt="overall"-->
+<!--                             style="width: 50%; height: auto;">-->
+<!--                        <h4 class="subtitle is-6">Section IV, Paragraph E</h4>-->
+<!--                    </div>-->
+<!--                    <p>-->
+<!--                        <b>B. Q2: The missing details</b>-->
+<!--                    </p>-->
+<!--                    <p>-->
+<!--                        We have addressed the previously missing details in our revisions, including the-->
+<!--                        hyperparameters, a discussion of the fixed-size log window, and the rationale underlying the-->
+<!--                        two-step active learning process.-->
+<!--                    </p>-->
+<!--                    <p style=" margin-left: 2em;" id="metareview-q2-1">-->
+<!--                        1) the settings of the hyperparameters: We have added a list of hyperparameters along with their-->
+<!--                        descriptions in the Experimental section (<b>Section IV, Paragraphs A and Table II</b>).-->
+<!--                    </p>-->
+<!--                    <div style="display: flex;">-->
+<!--                        <div style="width: 50%; box-sizing: border-box; text-align: center;">-->
+<!--                            <img src="static/image/revision/metareview_q2-1-1.png" alt="Section IV, Paragraphs A">-->
+<!--                            <h4 class="subtitle is-6">Section IV, Paragraphs A</h4>-->
+<!--                        </div>-->
+<!--                        <div style="width: 50%; box-sizing: border-box; text-align: center;">-->
+<!--                            <img src="static/image/revision/metareview_q2-1-2.png" alt="Section IV, D2">-->
+<!--                            <h4 class="subtitle is-6">Table II</h4>-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                    <p style=" margin-left: 2em;">-->
+<!--                        Additionally, we provide a detailed explanation of the rationale behind our hyperparameter-->
+<!--                        choices and analysis in the Threats to Validity section of the Experimental part (<b>Section IV,-->
+<!--                        Paragraph E</b>).-->
+<!--                    </p>-->
+<!--                    <div style="text-align: center;">-->
+<!--                        <img src="static/image/revision/metareview_q2-1-3.png" alt="overall"-->
+<!--                             style="width: 50%; height: auto;">-->
+<!--                        <h4 class="subtitle is-6">Section IV, Paragraph E</h4>-->
+<!--                    </div>-->
+<!--                    <p style=" margin-left: 2em;" id="metareview-q2-2">-->
+<!--                        2) a discussion of the fixed-size log window: Since other baselines employ a fixed-size log-->
+<!--                        window approach when processing the BGL, Thunderbird, and Zookeeper datasets, LogAction also-->
+<!--                        adopts a fixed-size log window to ensure fairness.-->
+<!--                        This is discussed in the Threats to Validity section of the Experimental part (<b>Section IV,-->
+<!--                        Paragraph E</b>).-->
+<!--                    </p>-->
+<!--                    <div style="text-align: center;">-->
+<!--                        <img src="static/image/revision/metareview_q2-2-1.png" alt="overall"-->
+<!--                             style="width: 50%; height: auto;">-->
+<!--                        <h4 class="subtitle is-6">Section IV, Paragraph E</h4>-->
+<!--                    </div>-->
+<!--                    <p style=" margin-left: 2em;">-->
+<!--                        Additionally, the experimental results of LogAction on the HDFS dataset (<b>Section IV, Table-->
+<!--                        III</b>), which utilizes a variable-size log window to generate log sequences, also demonstrate-->
+<!--                        effective performance.-->
+<!--                    </p>-->
+<!--                    <div style="text-align: center;">-->
+<!--                        <img src="static/image/revision/metareview_q2-2-2.png" alt="overall"-->
+<!--                             style="width: 75%; height: auto;">-->
+<!--                        <h4 class="subtitle is-6">Table III</h4>-->
+<!--                    </div>-->
+<!--                    <p style=" margin-left: 2em;" id="metareview-q2-3">-->
+<!--                        3) the rationale behind the two-step active learning process:-->
+<!--                        We provide a further explanation of the rationale behind the two-step active learning process in-->
+<!--                        the Approach section (<b>Section III, Paragraph C</b>).-->
+<!--                    </p>-->
+<!--                    <div style="text-align: center;">-->
+<!--                        <img src="static/image/revision/metareview_q3-1.png" alt="overall"-->
+<!--                             style="width: 75%; height: auto;">-->
+<!--                        <h4 class="subtitle is-6">Section III, Paragraph C</h4>-->
+<!--                    </div>-->
+<!--                    <p style=" margin-left: 2em;">-->
+<!--                        Additionally, we include ablation experiments on the two active learning sampling methods in the-->
+<!--                        experimental section (<b>Section IV, Paragraph D3 and Table IV</b>). The results demonstrate-->
+<!--                        that both sampling methods contribute to the improved performance of LogAction.-->
+<!--                    </p>-->
+<!--                    <div style="display: flex;">-->
+<!--                        <div style="width: 50%; box-sizing: border-box; text-align: center;">-->
+<!--                            <img src="static/image/revision/metareview_q3-2.png" alt="Section IV, Paragraph D3">-->
+<!--                            <h4 class="subtitle is-6">Section IV, Paragraph D3</h4>-->
+<!--                        </div>-->
+<!--                        <div style="width: 50%; box-sizing: border-box; text-align: center;">-->
+<!--                            <img src="static/image/revision/metareview_q3-3.png" alt="Table IV">-->
+<!--                            <h4 class="subtitle is-6">Table IV</h4>-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                    <p>-->
+<!--                        <b>C. Q3: Other issues</b>-->
+<!--                    </p>-->
+<!--                    <p>-->
+<!--                        Revisions addressing other review’s questions will be explained in the following three sections.-->
+<!--                    </p>-->
+<!--                </div>-->
 
-                <hr class="my-6"/>
+<!--                <hr class="my-6"/>-->
 
-                <div class="content has-text-justified">
-                    <h3 class="title is-4">Review #440A</h3>
-                    <p>
-                        <b>A. Q1: Hyperparameters of LSTM (<a href="#metareview-q2-1"
-                                                              style="color: #0066cc; text-decoration: underline;">Metareview
-                            Q2-1</a>)</b>
+<!--                <div class="content has-text-justified">-->
+<!--                    <h3 class="title is-4">Review #440A</h3>-->
+<!--                    <p>-->
+<!--                        <b>A. Q1: Hyperparameters of LSTM (<a href="#metareview-q2-1"-->
+<!--                                                              style="color: #0066cc; text-decoration: underline;">Metareview-->
+<!--                            Q2-1</a>)</b>-->
 
-                    </p>
-                    <p>
-                        Consistent with Metareview Q2-1, we have added a list of hyperparameters and discussed them in
-                        the Threats to Validity section. Please refer to the revisions in Section IV, Paragraphs A, E,
-                        and Table II.
-                    </p>
-                    <p>
-                        <b>B. Q2: Overhead of the proposed approach</b>
-                    </p>
-                    <p>
-                        We have added experiments on the efficiency of the method in the Experimental section (<b>Section
-                        IV, Paragraph D4, and Figure 7</b>). It can be observed that the efficiency of LogAction is
-                        lower than that of DeepLog and comparable to MetaLog and ACLog. Overall, the efficiency of
-                        LogAction is acceptable. Please refer to the revisions in Section IV, Paragraph D4, and Figure
-                        7.
-                    </p>
-                    <div style="display: flex;">
-                        <div style="width: 50%; box-sizing: border-box; text-align: center;">
-                            <img src="static/image/revision/reviewA_q2-1.png" alt="Section IV, Paragraphs D4">
-                            <h4 class="subtitle is-6">Section IV, Paragraphs D4</h4>
-                        </div>
-                        <div style="width: 50%; box-sizing: border-box; text-align: center;">
-                            <img src="static/image/revision/reviewA_q2-2.png" alt="Figure 7">
-                            <h4 class="subtitle is-6">Figure 7</h4>
-                        </div>
-                    </div>
-                    <p>
-                        <b>C. Q3: Gap-bridging ability of encoder</b>
-                    </p>
-                    <p>
-                        We have included a comparison between the encoder of LogAction and baseline methods in
-                        addressing distribution discrepancies across different systems within the experimental section (<b>Section
-                        IV, Paragraph D3, and Figure 6</b>). Specifically, we employed the t-SNE dimensionality
-                        reduction technique to visualize the data distributions of log vectors after encoding. Notably,
-                        the encoder of LogAction demonstrates superior performance, as the encoded log vectors from
-                        various systems form the most tightly clustered groups. This highlights the outstanding
-                        gap-bridging capability of LogAction’s encoder. Please refer to the revisions in Section IV,
-                        Paragraph D3, and Figure 6.
-                    </p>
-                    <div style="display: flex;">
-                        <div style="width: 70%; box-sizing: border-box; text-align: center;">
-                            <img src="static/image/revision/reviewA_q3-1.png" alt="Section IV, Paragraphs D3">
-                            <h4 class="subtitle is-6">Section IV, Paragraphs D3</h4>
-                        </div>
-                        <div style="width: 30%; box-sizing: border-box; text-align: center;">
-                            <img src="static/image/revision/reviewA_q3-2.png" alt="Figure 6">
-                            <h4 class="subtitle is-6">Figure 6</h4>
-                        </div>
-                    </div>
-                </div>
+<!--                    </p>-->
+<!--                    <p>-->
+<!--                        Consistent with Metareview Q2-1, we have added a list of hyperparameters and discussed them in-->
+<!--                        the Threats to Validity section. Please refer to the revisions in Section IV, Paragraphs A, E,-->
+<!--                        and Table II.-->
+<!--                    </p>-->
+<!--                    <p>-->
+<!--                        <b>B. Q2: Overhead of the proposed approach</b>-->
+<!--                    </p>-->
+<!--                    <p>-->
+<!--                        We have added experiments on the efficiency of the method in the Experimental section (<b>Section-->
+<!--                        IV, Paragraph D4, and Figure 7</b>). It can be observed that the efficiency of LogAction is-->
+<!--                        lower than that of DeepLog and comparable to MetaLog and ACLog. Overall, the efficiency of-->
+<!--                        LogAction is acceptable. Please refer to the revisions in Section IV, Paragraph D4, and Figure-->
+<!--                        7.-->
+<!--                    </p>-->
+<!--                    <div style="display: flex;">-->
+<!--                        <div style="width: 50%; box-sizing: border-box; text-align: center;">-->
+<!--                            <img src="static/image/revision/reviewA_q2-1.png" alt="Section IV, Paragraphs D4">-->
+<!--                            <h4 class="subtitle is-6">Section IV, Paragraphs D4</h4>-->
+<!--                        </div>-->
+<!--                        <div style="width: 50%; box-sizing: border-box; text-align: center;">-->
+<!--                            <img src="static/image/revision/reviewA_q2-2.png" alt="Figure 7">-->
+<!--                            <h4 class="subtitle is-6">Figure 7</h4>-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                    <p>-->
+<!--                        <b>C. Q3: Gap-bridging ability of encoder</b>-->
+<!--                    </p>-->
+<!--                    <p>-->
+<!--                        We have included a comparison between the encoder of LogAction and baseline methods in-->
+<!--                        addressing distribution discrepancies across different systems within the experimental section (<b>Section-->
+<!--                        IV, Paragraph D3, and Figure 6</b>). Specifically, we employed the t-SNE dimensionality-->
+<!--                        reduction technique to visualize the data distributions of log vectors after encoding. Notably,-->
+<!--                        the encoder of LogAction demonstrates superior performance, as the encoded log vectors from-->
+<!--                        various systems form the most tightly clustered groups. This highlights the outstanding-->
+<!--                        gap-bridging capability of LogAction’s encoder. Please refer to the revisions in Section IV,-->
+<!--                        Paragraph D3, and Figure 6.-->
+<!--                    </p>-->
+<!--                    <div style="display: flex;">-->
+<!--                        <div style="width: 70%; box-sizing: border-box; text-align: center;">-->
+<!--                            <img src="static/image/revision/reviewA_q3-1.png" alt="Section IV, Paragraphs D3">-->
+<!--                            <h4 class="subtitle is-6">Section IV, Paragraphs D3</h4>-->
+<!--                        </div>-->
+<!--                        <div style="width: 30%; box-sizing: border-box; text-align: center;">-->
+<!--                            <img src="static/image/revision/reviewA_q3-2.png" alt="Figure 6">-->
+<!--                            <h4 class="subtitle is-6">Figure 6</h4>-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                </div>-->
 
-                <style>
+<!--                <style>-->
 
-                    .image-row {
-                        display: flex;
-                        flex-wrap: wrap; /* 超出换行 */
-                        gap: calc(20% - 10px); /* 图片间距，可调整 */
-                        justify-content: flex-start; /* 水平起始排列，可改 center 等 */
-                        justify-items: center;
-                    }
+<!--                    .image-row {-->
+<!--                        display: flex;-->
+<!--                        flex-wrap: wrap; /* 超出换行 */-->
+<!--                        gap: calc(20% - 10px); /* 图片间距，可调整 */-->
+<!--                        justify-content: flex-start; /* 水平起始排列，可改 center 等 */-->
+<!--                        justify-items: center;-->
+<!--                    }-->
 
-                    .image-item {
-                        width: calc(40% - 10px); /* 让每行大致放 5 张，可根据需求微调宽度 */
-                        box-sizing: border-box;
-                        text-align: center;
-                    }
-
-
-                    .image-item img {
-                        max-width: 100%;
-                        height: auto;
-                        display: block;
-                        margin: 0 auto;
-                    }
-                </style>
-
-                <hr class="my-6"/>
-
-                <div class="content has-text-justified">
-                    <h3 class="title is-4">Review #440B</h3>
-                    <p>
-                        <b>A. Q1: Labels for encoder</b>
-                    </p>
-                    <p>
-                        We have added a description of the label sources used for training the encoder in the approach
-                        section (<b>Section III, Paragraph A</b>). During the LogAction process, the encoder is trained
-                        jointly with the downstream anomaly detection model, and the labels come from active learning
-                        processes. Please refer to the revisions in Section III, Paragraph A.
-                    </p>
-                    <div style="text-align: center;">
-                        <img src="static/image/revision/reviewB_q1.png" alt="Section III, Paragraph A"
-                             style="width: 50%; height: auto;">
-                        <h4 class="subtitle is-6">Section III, Paragraph A</h4>
-                    </div>
-                    <p>
-                        <b>B. Q2: Splitting strategy</b>
-                    </p>
-                    <p>
-                        We have added details regarding the partitioning of the training and testing sets in the
-                        experimental section (<b>Section IV, Paragraph A</b>). To prevent data leakage, we strictly
-                        split the training and testing sets based on time, ensuring a certain time gap between them to
-                        avoid any data leakage. Please refer to the revisions in Section IV, Paragraph A.
-                    </p>
-                    <div style="text-align: center;">
-                        <img src="static/image/revision/reviewB_q2.png" alt="Section IV, Paragraph A"
-                             style="width: 50%; height: auto;">
-                        <h4 class="subtitle is-6">Section IV, Paragraph A</h4>
-                    </div>
-                    <p>
-                        <b>C. Q3: 2% labeling cost (<a href="#metareview-q1"
-                                                       style="color: #0066cc; text-decoration: underline;">Metareview
-                            Q1</a>)</b>
-                    </p>
-                    <p>
-                        Consistent with Metareview Q1, we investigated a concrete measurement of the reduction in
-                        labeling effort for a small percentage of logs. The method effectively balances labeling cost
-                        and performance, allowing for dynamic adjustment based on practical requirements. Please refer
-                        to the revisions in Section IV, Paragraphs B, D2, E, and Figure 5.
-                    </p>
-                    <p>
-                        <b>D. Q4: The labels used for MetaLog </b>
-                    </p>
-                    <p>
-                        We have added a description of the labels used for MetaLog in the experimental section (<b>Section
-                        IV, Paragraph D1</b>). We emphasize that MetaLog is trained using 1% of anomaly labels in target
-                        system. However, due to the rarity of anomalies, this 1% anomaly labels requires screening a
-                        vast number of normal logs, thereby increasing the labeling cost. Please refer to the revisions
-                        in Section IV, Paragraphs D1.
-                    </p>
-                    <div style="text-align: center;">
-                        <img src="static/image/revision/reviewB_q4.png" alt="Section IV, Paragraph D1"
-                             style="width: 50%; height: auto;">
-                        <h4 class="subtitle is-6">Section IV, Paragraph D1</h4>
-                    </div>
-                    <p>
-                        <b>E. Q5: HDFS dataset</b>
-                    </p>
-                    <p>
-                        We have added experiments on the HDFS dataset in the experimental section (<b>Section IV, Tables
-                        III and IV</b>). The results demonstrate that the method maintains excellent per- formance on
-                        HDFS.
-                        <b>
-                            Due to the addition of a new dataset, some comparative results related to \method have been
-                            recalculated and revised.
-                        </b>
-                        Across the four log datasets, it achieves an average F1 score improvement of over 25.28%
-                        compared to existing methods. Please refer to the revisions in Section IV, Table III and IV.
-                    </p>
-                    <div style="display: flex;">
-                        <div style="width: 42%; box-sizing: border-box; text-align: center;">
-                            <img src="static/image/revision/reviewB_q5-1.png" alt="Tables III">
-                            <h4 class="subtitle is-6">Tables III</h4>
-                        </div>
-                        <div style="width: 58%; box-sizing: border-box; text-align: center;">
-                            <img src="static/image/revision/reviewB_q5-2.png" alt="Tables IV">
-                            <h4 class="subtitle is-6">Tables IV</h4>
-                        </div>
-                    </div>
-                    <p>
-                        <b>F. Q6: Some typo</b>
-                    </p>
-                    <p>
-                        Several typos have been corrected. For example, in Section I, “code start problem” has been
-                        revised to “cold start problem.”
-                    </p>
-                    <div style="text-align: center;">
-                        <img src="static/image/revision/reviewB_q6.png" alt="Section I"
-                             style="width: 50%; height: auto;">
-                    </div>
-                </div>
-
-                <hr class="my-6"/>
-
-                <div class="content has-text-justified">
-                    <h3 class="title is-4">Review #440C</h3>
-                    <p>
-                        <b>A. Q1: Ablation study of the sampling strategy (<a href="#metareview-q2-3"
-                                                                              style="color: #0066cc; text-decoration: underline;">Metareview
-                            Q2-3</a>)</b>
-                    </p>
-                    <p>
-                        Consistent with Metareview Q2-3, we have added ablation experiments on the two sampling
-                        strategies. Please refer to the revisions in Section IV, Paragraphs D3 and Table IV.
-                    </p>
+<!--                    .image-item {-->
+<!--                        width: calc(40% - 10px); /* 让每行大致放 5 张，可根据需求微调宽度 */-->
+<!--                        box-sizing: border-box;-->
+<!--                        text-align: center;-->
+<!--                    }-->
 
 
-                    <p>
-                        <b>B. Q2: Fixed time window (<a href="#metareview-q2-2"
-                                                        style="color: #0066cc; text-decoration: underline;">Metareview
-                            Q2-2</a>)</b>
-                    </p>
-                    <p>
-                        Consistent with Metareview Q2-2, we have added a dis- cussion on the fixed-time window in the
-                        Threats to Validity section of the experiments. Additionally, we have included experiments of
-                        the method on the HDFS dataset segmented using a variable-time window. Please refer to the
-                        revisions in Section IV, Paragraph E, and Table III.
-                    </p>
-                    <p>
-                        <b>C. Q3: Hyperparameters (<a href="#metareview-q2-1"
-                                                      style="color: #0066cc; text-decoration: underline;">Metareview
-                            Q2-1</a>)</b>
-                    </p>
-                    <p>
-                        Consistent with Metareview Q2-1, we have added a list of hyperparameters and discussed them in
-                        the Threats to Validity section. Please refer to the revisions in Section IV, Paragraphs A, E,
-                        and Table II.
-                    </p>
-                </div>
-            </div>
-        </div>
-    </div>
-    <hr class="my-6"/>
-</section>
+<!--                    .image-item img {-->
+<!--                        max-width: 100%;-->
+<!--                        height: auto;-->
+<!--                        display: block;-->
+<!--                        margin: 0 auto;-->
+<!--                    }-->
+<!--                </style>-->
 
-<section class="section">
-    <div class="container is-max-desktop">
-        <div class="columns is-centered">
-            <div class="column is-full-width">
-                <h2 class="title is-3">Rebuttal</h2>
-                <div class="columns is-vcentered interpolation-panel">
-                </div>
-                <br/>
-                <div class="content has-text-justified">
-                    <h3 class="title is-4" id="review2">Review #440A</h3>
-                    <p>
-                        <b>1. Hyperparameters of LSTM</b>: The encoder's ability to generalize is driven by the
-                        contrastive learning framework, with the LSTM serving merely as a standard feature extractor. In
-                        our experiments, LSTM hyperparameters were intentionally fixed based on prior classical works
-                        (LogTransfer[1], DeepLog[2]) across all datasets. Below is the list of our hyperparameters:
-                    </p>
-                    <div style="text-align: center;">
-                        <img src="static/image/hyperparameters.png" alt="overall"
-                             style="width: 50%; height: auto;">
-                    </div>
-                    <p>
-                        <b>2. Overhead of the proposed approach:</b> We conducted an efficiency analysis experiment for
-                        LogAction in BGL and Zookeeper dataset, and below is the experiments results. The reported
-                        training and inference times include the processing time for encoding and anomaly detection for
-                        a single log sequence. It can be observed that the efficiency of LogAction is lower than that
-                        DeepLog and is comparable to MetaLog and LogTransfer.
-                    </p>
-                    <div style="text-align: center;">
-                        <img src="static/image/efficiency.png" alt="overall" style="width: 50%; height: auto;">
-                    </div>
-                    <div>
-                        <p>
-                            <b>3. Gap-bridging ability of encoder: </b>The distribution differences between logs shown
-                            in
-                            Figure 6 of the paper provide a direct demonstration of the encoding’s gap-bridging ability.
-                            We
-                            further compared the gap-bridging ability of the encoding component and baseline methods
-                            (Bert-based encoder, LogTAD, MetaLog)
-                            using
-                            this approach, with the results available below.
-                        </p>
-                        <p style=" margin-left: 2em;">
-                            <b>a. Bert: </b>The distribution of data points in Bert shows a relatively scattered
-                            pattern.
-                            Normal and anomalous points from both source and target domains are interspersed without
-                            clear separation,
-                            indicating limited ability to distinguish different log categories effectively.
-                        </p>
-                        <p style=" margin-left: 2em;">
-                            <b>b. LogTAD: </b>In LogTAD, there is some improvement in the distribution compared to Bert.
-                            However, the clustering of points is still not very distinct. Source and target domain
-                            points, especially anomalous ones, do not form well - defined clusters, suggesting moderate
-                            performance in separating log types.
-                        </p>
-                        <p style=" margin-left: 2em;">
-                            <b>c. Metalog: </b>Metalog presents a better - organized distribution. Data points start to
-                            form more discernible clusters. Normal points (both source and target) are relatively
-                            grouped, and anomalous points also show some clustering tendency, implying an enhanced
-                            capability to differentiate log categories.
-                        </p>
-                        <p style=" margin-left: 2em;">
-                            <b>d. LogAction: </b>LogAction exhibits the most favorable distribution. Points are highly
-                            clustered, with clear separation between normal and anomalous log data from both source and
-                            target domains. A distinct boundary can be observed, demonstrating superior ability in
-                            distinguishing and clustering different log types.
-                        </p>
-                        <p>
-                            Among these, LogAction’s encoder performs
-                            most
-                            prominently, as the encoded log vectors from different systems are the most tightly
-                            clustered.
-                        </p>
-                    </div>
-                    <div class="image-row" style="margin-top: 1em">
-                        <div class="image-item">
-                            <img src="static/image/Bert.png" alt="Bert">
-                            <h4 class="subtitle is-6">Bert</h4>
-                        </div>
-                        <div class="image-item">
-                            <img src="static/image/LogTAD.png" alt="LogTAD">
-                            <h4 class="subtitle is-6">LogTAD</h4>
-                        </div>
-                        <div class="image-item">
-                            <img src="static/image/Metalog.png" alt="Metalog">
-                            <h4 class="subtitle is-6">Metalog</h4>
-                        </div>
-                        <div class="image-item">
-                            <img src="static/image/LogAction.png" alt="LogAction">
-                            <h4 class="subtitle is-6">LogAction</h4>
-                        </div>
-                    </div>
-                    <div id="review1">
-                        <p>
-                            <b>4. Intuition behind sampling strategy: </b>These two sampling methods select the most
-                            valuable samples for labeling based on the data distribution and the model’s uncertainty
-                            distribution, respectively. The intuitive assumption is that the log distribution follows a
-                            normal distribution. Although this assumption does not always hold, both sampling strategies
-                            have demonstrated effectiveness. Ablation studies on these sampling strategies, specifically
-                            energy-based sampling and uncertainty-based sampling (LogAction<sub>we</sub> and
-                            LogAction<sub>wu</sub>), are presented below and confirm the effectiveness of both methods.
-                            If space permits, we will include these results in the paper.
-                        </p>
-                    </div>
-                    <div style="text-align: center;">
-                        <img src="static/image/ablation_study_sampling.png" alt="overall"
-                             style="width: 80%; height: auto;">
-                    </div>
-                </div>
-                <style>
+<!--                <hr class="my-6"/>-->
 
-                    .image-row {
-                        display: flex;
-                        flex-wrap: wrap; /* 超出换行 */
-                        gap: calc(20% - 10px); /* 图片间距，可调整 */
-                        justify-content: flex-start; /* 水平起始排列，可改 center 等 */
-                        justify-items: center;
-                    }
+<!--                <div class="content has-text-justified">-->
+<!--                    <h3 class="title is-4">Review #440B</h3>-->
+<!--                    <p>-->
+<!--                        <b>A. Q1: Labels for encoder</b>-->
+<!--                    </p>-->
+<!--                    <p>-->
+<!--                        We have added a description of the label sources used for training the encoder in the approach-->
+<!--                        section (<b>Section III, Paragraph A</b>). During the LogAction process, the encoder is trained-->
+<!--                        jointly with the downstream anomaly detection model, and the labels come from active learning-->
+<!--                        processes. Please refer to the revisions in Section III, Paragraph A.-->
+<!--                    </p>-->
+<!--                    <div style="text-align: center;">-->
+<!--                        <img src="static/image/revision/reviewB_q1.png" alt="Section III, Paragraph A"-->
+<!--                             style="width: 50%; height: auto;">-->
+<!--                        <h4 class="subtitle is-6">Section III, Paragraph A</h4>-->
+<!--                    </div>-->
+<!--                    <p>-->
+<!--                        <b>B. Q2: Splitting strategy</b>-->
+<!--                    </p>-->
+<!--                    <p>-->
+<!--                        We have added details regarding the partitioning of the training and testing sets in the-->
+<!--                        experimental section (<b>Section IV, Paragraph A</b>). To prevent data leakage, we strictly-->
+<!--                        split the training and testing sets based on time, ensuring a certain time gap between them to-->
+<!--                        avoid any data leakage. Please refer to the revisions in Section IV, Paragraph A.-->
+<!--                    </p>-->
+<!--                    <div style="text-align: center;">-->
+<!--                        <img src="static/image/revision/reviewB_q2.png" alt="Section IV, Paragraph A"-->
+<!--                             style="width: 50%; height: auto;">-->
+<!--                        <h4 class="subtitle is-6">Section IV, Paragraph A</h4>-->
+<!--                    </div>-->
+<!--                    <p>-->
+<!--                        <b>C. Q3: 2% labeling cost (<a href="#metareview-q1"-->
+<!--                                                       style="color: #0066cc; text-decoration: underline;">Metareview-->
+<!--                            Q1</a>)</b>-->
+<!--                    </p>-->
+<!--                    <p>-->
+<!--                        Consistent with Metareview Q1, we investigated a concrete measurement of the reduction in-->
+<!--                        labeling effort for a small percentage of logs. The method effectively balances labeling cost-->
+<!--                        and performance, allowing for dynamic adjustment based on practical requirements. Please refer-->
+<!--                        to the revisions in Section IV, Paragraphs B, D2, E, and Figure 5.-->
+<!--                    </p>-->
+<!--                    <p>-->
+<!--                        <b>D. Q4: The labels used for MetaLog </b>-->
+<!--                    </p>-->
+<!--                    <p>-->
+<!--                        We have added a description of the labels used for MetaLog in the experimental section (<b>Section-->
+<!--                        IV, Paragraph D1</b>). We emphasize that MetaLog is trained using 1% of anomaly labels in target-->
+<!--                        system. However, due to the rarity of anomalies, this 1% anomaly labels requires screening a-->
+<!--                        vast number of normal logs, thereby increasing the labeling cost. Please refer to the revisions-->
+<!--                        in Section IV, Paragraphs D1.-->
+<!--                    </p>-->
+<!--                    <div style="text-align: center;">-->
+<!--                        <img src="static/image/revision/reviewB_q4.png" alt="Section IV, Paragraph D1"-->
+<!--                             style="width: 50%; height: auto;">-->
+<!--                        <h4 class="subtitle is-6">Section IV, Paragraph D1</h4>-->
+<!--                    </div>-->
+<!--                    <p>-->
+<!--                        <b>E. Q5: HDFS dataset</b>-->
+<!--                    </p>-->
+<!--                    <p>-->
+<!--                        We have added experiments on the HDFS dataset in the experimental section (<b>Section IV, Tables-->
+<!--                        III and IV</b>). The results demonstrate that the method maintains excellent per- formance on-->
+<!--                        HDFS.-->
+<!--                        <b>-->
+<!--                            Due to the addition of a new dataset, some comparative results related to \method have been-->
+<!--                            recalculated and revised.-->
+<!--                        </b>-->
+<!--                        Across the four log datasets, it achieves an average F1 score improvement of over 25.28%-->
+<!--                        compared to existing methods. Please refer to the revisions in Section IV, Table III and IV.-->
+<!--                    </p>-->
+<!--                    <div style="display: flex;">-->
+<!--                        <div style="width: 42%; box-sizing: border-box; text-align: center;">-->
+<!--                            <img src="static/image/revision/reviewB_q5-1.png" alt="Tables III">-->
+<!--                            <h4 class="subtitle is-6">Tables III</h4>-->
+<!--                        </div>-->
+<!--                        <div style="width: 58%; box-sizing: border-box; text-align: center;">-->
+<!--                            <img src="static/image/revision/reviewB_q5-2.png" alt="Tables IV">-->
+<!--                            <h4 class="subtitle is-6">Tables IV</h4>-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                    <p>-->
+<!--                        <b>F. Q6: Some typo</b>-->
+<!--                    </p>-->
+<!--                    <p>-->
+<!--                        Several typos have been corrected. For example, in Section I, “code start problem” has been-->
+<!--                        revised to “cold start problem.”-->
+<!--                    </p>-->
+<!--                    <div style="text-align: center;">-->
+<!--                        <img src="static/image/revision/reviewB_q6.png" alt="Section I"-->
+<!--                             style="width: 50%; height: auto;">-->
+<!--                    </div>-->
+<!--                </div>-->
 
-                    .image-item {
-                        width: calc(40% - 10px); /* 让每行大致放 5 张，可根据需求微调宽度 */
-                        box-sizing: border-box;
-                        text-align: center;
-                    }
+<!--                <hr class="my-6"/>-->
 
-                    .image-item img {
-                        max-width: 100%;
-                        height: auto;
-                        display: block;
-                        margin: 0 auto;
-                    }
-                </style>
-                <hr class="my-6"/>
-                <div class="content has-text-justified">
-                    <h3 class="title is-4">Review #440B</h3>
-                    <p>
-                        <b>1. Labels for encoder: </b>During the LogAction process, the encoder is trained jointly with
-                        the downstream anomaly detection model, and the labels come from active learning processes. We
-                        will include this explanation in the paper.
-                    </p>
-                    <p>
-                        <b>2. Splitting strategy: </b>
-                        To prevent data leakage, we strictly split the training and testing sets based on time, ensuring
-                        a certain time gap between them to avoid any data leakage.
-                    </p>
-
-                    <p>
-                        <b>3. 2 % labeling: </b>
-                    <p style=" margin-left: 2em;">
-                        <b>a. Regarding whether 2% of labeled data covers all log templates: </b>the principle of active
-                        learning is that a small subset of informative samples can effectively substitute training on
-                        the entire dataset. In log data, such valuable samples may correspond to the same log templates
-                        or semantically similar log events, which are specific to the software system and cannot be
-                        adequately captured by merely identifying log templates but require active learning.
-                        Furthermore, randomly selecting 2% of logs does not achieve the same effectiveness as active
-                        learning. This is evidenced by the ablation study, where replacing active learning with random
-                        sampling (LogAction_wa) results in a significant performance decline.
-                        <b>b. Regarding labeling costs: </b>the 2% labeling ratio represents the optimal performance of
-                        LogAction, rather than a strict requirement. As shown in Figure 5, the model still performs well
-                        with 1% or less labeled data (0% in the BGL dataset). In practice, the labeling ratio can be
-                        adjusted according to the difficulty of human annotation to balance cost and accuracy. Notably,
-                        reducing the labeling effort from 100% to 2% also significantly decreases human labeling
-                        efforts. For example, this approach saves 34,300 labeling instances on the BGL dataset.
-                    </p>
-                    </p>
-
-                    <p>
-                        <b>4. The labels used for MetaLog: </b>
-                        We want to emphasize that MetaLog used 1% anomaly labels instead of 1% of all labels in its
-                        experiments. Since anomalies are rare, the cost of labeling anomaly data is very high (e.g.,
-                        labeling 10 log sequences might get only one anomalous log sequence). In our experiments, we
-                        training MetaLog using 2% of all labels, where the number of anomaly labels was far less than
-                        1%.
-                    </p>
-
-                    <p>
-                        <b>5. HDFS dataset: </b>
-                        Due to space limitations, we did not include results on the HDFS dataset in the paper. We have
-                        provided experimental results on HDFS and Zookeeper below. If space permits, we will include
-                        these results in the paper.
-                    </p>
-                    <div style="text-align: center;">
-                        <img src="static/image/HDFS.png" alt="overall" style="width: 80%; height: auto;">
-                    </div>
+<!--                <div class="content has-text-justified">-->
+<!--                    <h3 class="title is-4">Review #440C</h3>-->
+<!--                    <p>-->
+<!--                        <b>A. Q1: Ablation study of the sampling strategy (<a href="#metareview-q2-3"-->
+<!--                                                                              style="color: #0066cc; text-decoration: underline;">Metareview-->
+<!--                            Q2-3</a>)</b>-->
+<!--                    </p>-->
+<!--                    <p>-->
+<!--                        Consistent with Metareview Q2-3, we have added ablation experiments on the two sampling-->
+<!--                        strategies. Please refer to the revisions in Section IV, Paragraphs D3 and Table IV.-->
+<!--                    </p>-->
 
 
-                </div>
-                <hr class="my-6"/>
-                <div class="content has-text-justified">
-                    <h3 class="title is-4">Review #440C</h3>
-                    <p>
-                        <b>1. Ablation study of the sampling strategy: </b>
-                        We provide some experimental results in <a href="#review1"
-                                                                   style="color: #0066cc; text-decoration: underline;">Review
-                        #440A 4</a>, which demonstrate that both strategies play a crucial role. If space permits, we
-                        will include these results in the paper.
-                    </p>
-                    <p>
-                        <b>2. Fixed time window: </b>
-                        Since other baselines (such as LogTransfer[1]) use fixed time windows when working with the
-                        three datasets (BGL, Thunderbird, Zookeeper), we also adopt fixed time window segmentation to
-                        ensure fairness in the experiments. The time window size is selected with reference to classic
-                        works such as DeepLog[2]. Additionally, the experimental results on the HDFS dataset, which
-                        utilizes a variable size to create log sequences, are available on the website.
-                    </p>
-                    <p>
-                        <b>3. Hyperparameters: </b>
-                        We have listed the hyperparameters in <a href="#review2"
-                                                                 style="color: #0066cc; text-decoration: underline;">Review
-                        #440A 1</a>, and if space allows, we will include them in the main text.
-                    </p>
-                </div>
-            </div>
-        </div>
-    </div>
-    <hr class="my-6"/>
-</section>
+<!--                    <p>-->
+<!--                        <b>B. Q2: Fixed time window (<a href="#metareview-q2-2"-->
+<!--                                                        style="color: #0066cc; text-decoration: underline;">Metareview-->
+<!--                            Q2-2</a>)</b>-->
+<!--                    </p>-->
+<!--                    <p>-->
+<!--                        Consistent with Metareview Q2-2, we have added a dis- cussion on the fixed-time window in the-->
+<!--                        Threats to Validity section of the experiments. Additionally, we have included experiments of-->
+<!--                        the method on the HDFS dataset segmented using a variable-time window. Please refer to the-->
+<!--                        revisions in Section IV, Paragraph E, and Table III.-->
+<!--                    </p>-->
+<!--                    <p>-->
+<!--                        <b>C. Q3: Hyperparameters (<a href="#metareview-q2-1"-->
+<!--                                                      style="color: #0066cc; text-decoration: underline;">Metareview-->
+<!--                            Q2-1</a>)</b>-->
+<!--                    </p>-->
+<!--                    <p>-->
+<!--                        Consistent with Metareview Q2-1, we have added a list of hyperparameters and discussed them in-->
+<!--                        the Threats to Validity section. Please refer to the revisions in Section IV, Paragraphs A, E,-->
+<!--                        and Table II.-->
+<!--                    </p>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--        </div>-->
+<!--    </div>-->
+<!--    <hr class="my-6"/>-->
+<!--</section>-->
+
+<!--<section class="section">-->
+<!--    <div class="container is-max-desktop">-->
+<!--        <div class="columns is-centered">-->
+<!--            <div class="column is-full-width">-->
+<!--                <h2 class="title is-3">Rebuttal</h2>-->
+<!--                <div class="columns is-vcentered interpolation-panel">-->
+<!--                </div>-->
+<!--                <br/>-->
+<!--                <div class="content has-text-justified">-->
+<!--                    <h3 class="title is-4" id="review2">Review #440A</h3>-->
+<!--                    <p>-->
+<!--                        <b>1. Hyperparameters of LSTM</b>: The encoder's ability to generalize is driven by the-->
+<!--                        contrastive learning framework, with the LSTM serving merely as a standard feature extractor. In-->
+<!--                        our experiments, LSTM hyperparameters were intentionally fixed based on prior classical works-->
+<!--                        (LogTransfer[1], DeepLog[2]) across all datasets. Below is the list of our hyperparameters:-->
+<!--                    </p>-->
+<!--                    <div style="text-align: center;">-->
+<!--                        <img src="static/image/hyperparameters.png" alt="overall"-->
+<!--                             style="width: 50%; height: auto;">-->
+<!--                    </div>-->
+<!--                    <p>-->
+<!--                        <b>2. Overhead of the proposed approach:</b> We conducted an efficiency analysis experiment for-->
+<!--                        LogAction in BGL and Zookeeper dataset, and below is the experiments results. The reported-->
+<!--                        training and inference times include the processing time for encoding and anomaly detection for-->
+<!--                        a single log sequence. It can be observed that the efficiency of LogAction is lower than that-->
+<!--                        DeepLog and is comparable to MetaLog and LogTransfer.-->
+<!--                    </p>-->
+<!--                    <div style="text-align: center;">-->
+<!--                        <img src="static/image/efficiency.png" alt="overall" style="width: 50%; height: auto;">-->
+<!--                    </div>-->
+<!--                    <div>-->
+<!--                        <p>-->
+<!--                            <b>3. Gap-bridging ability of encoder: </b>The distribution differences between logs shown-->
+<!--                            in-->
+<!--                            Figure 6 of the paper provide a direct demonstration of the encoding’s gap-bridging ability.-->
+<!--                            We-->
+<!--                            further compared the gap-bridging ability of the encoding component and baseline methods-->
+<!--                            (Bert-based encoder, LogTAD, MetaLog)-->
+<!--                            using-->
+<!--                            this approach, with the results available below.-->
+<!--                        </p>-->
+<!--                        <p style=" margin-left: 2em;">-->
+<!--                            <b>a. Bert: </b>The distribution of data points in Bert shows a relatively scattered-->
+<!--                            pattern.-->
+<!--                            Normal and anomalous points from both source and target domains are interspersed without-->
+<!--                            clear separation,-->
+<!--                            indicating limited ability to distinguish different log categories effectively.-->
+<!--                        </p>-->
+<!--                        <p style=" margin-left: 2em;">-->
+<!--                            <b>b. LogTAD: </b>In LogTAD, there is some improvement in the distribution compared to Bert.-->
+<!--                            However, the clustering of points is still not very distinct. Source and target domain-->
+<!--                            points, especially anomalous ones, do not form well - defined clusters, suggesting moderate-->
+<!--                            performance in separating log types.-->
+<!--                        </p>-->
+<!--                        <p style=" margin-left: 2em;">-->
+<!--                            <b>c. Metalog: </b>Metalog presents a better - organized distribution. Data points start to-->
+<!--                            form more discernible clusters. Normal points (both source and target) are relatively-->
+<!--                            grouped, and anomalous points also show some clustering tendency, implying an enhanced-->
+<!--                            capability to differentiate log categories.-->
+<!--                        </p>-->
+<!--                        <p style=" margin-left: 2em;">-->
+<!--                            <b>d. LogAction: </b>LogAction exhibits the most favorable distribution. Points are highly-->
+<!--                            clustered, with clear separation between normal and anomalous log data from both source and-->
+<!--                            target domains. A distinct boundary can be observed, demonstrating superior ability in-->
+<!--                            distinguishing and clustering different log types.-->
+<!--                        </p>-->
+<!--                        <p>-->
+<!--                            Among these, LogAction’s encoder performs-->
+<!--                            most-->
+<!--                            prominently, as the encoded log vectors from different systems are the most tightly-->
+<!--                            clustered.-->
+<!--                        </p>-->
+<!--                    </div>-->
+<!--                    <div class="image-row" style="margin-top: 1em">-->
+<!--                        <div class="image-item">-->
+<!--                            <img src="static/image/Bert.png" alt="Bert">-->
+<!--                            <h4 class="subtitle is-6">Bert</h4>-->
+<!--                        </div>-->
+<!--                        <div class="image-item">-->
+<!--                            <img src="static/image/LogTAD.png" alt="LogTAD">-->
+<!--                            <h4 class="subtitle is-6">LogTAD</h4>-->
+<!--                        </div>-->
+<!--                        <div class="image-item">-->
+<!--                            <img src="static/image/Metalog.png" alt="Metalog">-->
+<!--                            <h4 class="subtitle is-6">Metalog</h4>-->
+<!--                        </div>-->
+<!--                        <div class="image-item">-->
+<!--                            <img src="static/image/LogAction.png" alt="LogAction">-->
+<!--                            <h4 class="subtitle is-6">LogAction</h4>-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                    <div id="review1">-->
+<!--                        <p>-->
+<!--                            <b>4. Intuition behind sampling strategy: </b>These two sampling methods select the most-->
+<!--                            valuable samples for labeling based on the data distribution and the model’s uncertainty-->
+<!--                            distribution, respectively. The intuitive assumption is that the log distribution follows a-->
+<!--                            normal distribution. Although this assumption does not always hold, both sampling strategies-->
+<!--                            have demonstrated effectiveness. Ablation studies on these sampling strategies, specifically-->
+<!--                            energy-based sampling and uncertainty-based sampling (LogAction<sub>we</sub> and-->
+<!--                            LogAction<sub>wu</sub>), are presented below and confirm the effectiveness of both methods.-->
+<!--                            If space permits, we will include these results in the paper.-->
+<!--                        </p>-->
+<!--                    </div>-->
+<!--                    <div style="text-align: center;">-->
+<!--                        <img src="static/image/ablation_study_sampling.png" alt="overall"-->
+<!--                             style="width: 80%; height: auto;">-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--                <style>-->
+
+<!--                    .image-row {-->
+<!--                        display: flex;-->
+<!--                        flex-wrap: wrap; /* 超出换行 */-->
+<!--                        gap: calc(20% - 10px); /* 图片间距，可调整 */-->
+<!--                        justify-content: flex-start; /* 水平起始排列，可改 center 等 */-->
+<!--                        justify-items: center;-->
+<!--                    }-->
+
+<!--                    .image-item {-->
+<!--                        width: calc(40% - 10px); /* 让每行大致放 5 张，可根据需求微调宽度 */-->
+<!--                        box-sizing: border-box;-->
+<!--                        text-align: center;-->
+<!--                    }-->
+
+<!--                    .image-item img {-->
+<!--                        max-width: 100%;-->
+<!--                        height: auto;-->
+<!--                        display: block;-->
+<!--                        margin: 0 auto;-->
+<!--                    }-->
+<!--                </style>-->
+<!--                <hr class="my-6"/>-->
+<!--                <div class="content has-text-justified">-->
+<!--                    <h3 class="title is-4">Review #440B</h3>-->
+<!--                    <p>-->
+<!--                        <b>1. Labels for encoder: </b>During the LogAction process, the encoder is trained jointly with-->
+<!--                        the downstream anomaly detection model, and the labels come from active learning processes. We-->
+<!--                        will include this explanation in the paper.-->
+<!--                    </p>-->
+<!--                    <p>-->
+<!--                        <b>2. Splitting strategy: </b>-->
+<!--                        To prevent data leakage, we strictly split the training and testing sets based on time, ensuring-->
+<!--                        a certain time gap between them to avoid any data leakage.-->
+<!--                    </p>-->
+
+<!--                    <p>-->
+<!--                        <b>3. 2 % labeling: </b>-->
+<!--                    <p style=" margin-left: 2em;">-->
+<!--                        <b>a. Regarding whether 2% of labeled data covers all log templates: </b>the principle of active-->
+<!--                        learning is that a small subset of informative samples can effectively substitute training on-->
+<!--                        the entire dataset. In log data, such valuable samples may correspond to the same log templates-->
+<!--                        or semantically similar log events, which are specific to the software system and cannot be-->
+<!--                        adequately captured by merely identifying log templates but require active learning.-->
+<!--                        Furthermore, randomly selecting 2% of logs does not achieve the same effectiveness as active-->
+<!--                        learning. This is evidenced by the ablation study, where replacing active learning with random-->
+<!--                        sampling (LogAction_wa) results in a significant performance decline.-->
+<!--                        <b>b. Regarding labeling costs: </b>the 2% labeling ratio represents the optimal performance of-->
+<!--                        LogAction, rather than a strict requirement. As shown in Figure 5, the model still performs well-->
+<!--                        with 1% or less labeled data (0% in the BGL dataset). In practice, the labeling ratio can be-->
+<!--                        adjusted according to the difficulty of human annotation to balance cost and accuracy. Notably,-->
+<!--                        reducing the labeling effort from 100% to 2% also significantly decreases human labeling-->
+<!--                        efforts. For example, this approach saves 34,300 labeling instances on the BGL dataset.-->
+<!--                    </p>-->
+<!--                    </p>-->
+
+<!--                    <p>-->
+<!--                        <b>4. The labels used for MetaLog: </b>-->
+<!--                        We want to emphasize that MetaLog used 1% anomaly labels instead of 1% of all labels in its-->
+<!--                        experiments. Since anomalies are rare, the cost of labeling anomaly data is very high (e.g.,-->
+<!--                        labeling 10 log sequences might get only one anomalous log sequence). In our experiments, we-->
+<!--                        training MetaLog using 2% of all labels, where the number of anomaly labels was far less than-->
+<!--                        1%.-->
+<!--                    </p>-->
+
+<!--                    <p>-->
+<!--                        <b>5. HDFS dataset: </b>-->
+<!--                        Due to space limitations, we did not include results on the HDFS dataset in the paper. We have-->
+<!--                        provided experimental results on HDFS and Zookeeper below. If space permits, we will include-->
+<!--                        these results in the paper.-->
+<!--                    </p>-->
+<!--                    <div style="text-align: center;">-->
+<!--                        <img src="static/image/HDFS.png" alt="overall" style="width: 80%; height: auto;">-->
+<!--                    </div>-->
+
+
+<!--                </div>-->
+<!--                <hr class="my-6"/>-->
+<!--                <div class="content has-text-justified">-->
+<!--                    <h3 class="title is-4">Review #440C</h3>-->
+<!--                    <p>-->
+<!--                        <b>1. Ablation study of the sampling strategy: </b>-->
+<!--                        We provide some experimental results in <a href="#review1"-->
+<!--                                                                   style="color: #0066cc; text-decoration: underline;">Review-->
+<!--                        #440A 4</a>, which demonstrate that both strategies play a crucial role. If space permits, we-->
+<!--                        will include these results in the paper.-->
+<!--                    </p>-->
+<!--                    <p>-->
+<!--                        <b>2. Fixed time window: </b>-->
+<!--                        Since other baselines (such as LogTransfer[1]) use fixed time windows when working with the-->
+<!--                        three datasets (BGL, Thunderbird, Zookeeper), we also adopt fixed time window segmentation to-->
+<!--                        ensure fairness in the experiments. The time window size is selected with reference to classic-->
+<!--                        works such as DeepLog[2]. Additionally, the experimental results on the HDFS dataset, which-->
+<!--                        utilizes a variable size to create log sequences, are available on the website.-->
+<!--                    </p>-->
+<!--                    <p>-->
+<!--                        <b>3. Hyperparameters: </b>-->
+<!--                        We have listed the hyperparameters in <a href="#review2"-->
+<!--                                                                 style="color: #0066cc; text-decoration: underline;">Review-->
+<!--                        #440A 1</a>, and if space allows, we will include them in the main text.-->
+<!--                    </p>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--        </div>-->
+<!--    </div>-->
+<!--    <hr class="my-6"/>-->
+<!--</section>-->
 
 
 <section class="hero teaser">
@@ -843,7 +845,9 @@
                         showing distinct distributions. After encoding, clusters of both systems' normal and anomalous
                         logs converge, indicating reduced distribution gaps and improved alignment.
                     </p>
-                    <img src="static/image/vis.jpg" alt="results">
+                    <div align="center">
+                        <img src="/static/image/vis.png" alt="Hierarchical UCB" style="width: 60%;">
+                    </div>
                 </div>
             </div>
         </div>
@@ -857,7 +861,7 @@
                href="">
                 <i class="fas fa-file-pdf"></i>
             </a>
-            <a class="icon-link" href="https://anonymous.4open.science/r/LogAction-B821/" class="external-link"
+            <a class="icon-link" href="https://github.com/Dcm-dcm-dcm/LogAction" class="external-link"
                disabled>
                 <i class="fab fa-github"></i>
             </a>
